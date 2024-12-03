@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Distance Detectors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="realtime.html">Real-Time Reading</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="documents.html">Documents</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <h1>Documents</h1>
+
+        <!-- Search Bar -->
+        <div class="mb-4">
+            <input type="text" id="searchBar" class="form-control" placeholder="Search documents...">
+        </div>
+
+        <!-- Document List -->
+        <ul id="documentList" class="list-group">
+            <li class="list-group-item">
+                <a href="Week 1.pdf" target="_blank">Week 1 Report</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+            <li class="list-group-item">
+                <a href="Week2.pdf" target="_blank">Week 2 Report</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+            <li class="list-group-item">
+                <a href="Week 3.pdf" target="_blank">Week 3 Report</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+            <li class="list-group-item">
+                <a href="Week 4.pdf" target="_blank">Week 4 Report</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+            <li class="list-group-item">
+                <a href="weekly_report.pdf" target="_blank">Week 5 Report</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+            <li class="list-group-item">
+                <a href="Research project paper.pdf" target="_blank">Research Project Paper</a> <button class="btn btn-outline-primary btn-sm">Download</button>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2024 Distance Detectors. All rights reserved.</p>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script>
+        // Filter Documents
+        document.getElementById('searchBar').addEventListener('keyup', function () {
+            const filter = this.value.toLowerCase();
+            const items = document.querySelectorAll('#documentList li');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
